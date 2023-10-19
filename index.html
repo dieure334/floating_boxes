@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <meta charset="utf-8">
+    <title>Floating Boxes</title>
+    <meta name="description" content="Ocean">
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@3.2.1/dist/aframe-animation-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-extras.ocean@%5E3.5.x/dist/aframe-extras.ocean.min.js"></script>
+    <script src="https://unpkg.com/aframe-gradient-sky@1.0.4/dist/gradientsky.min.js"></script>
+    <script src="https://unpkg.com/aframe-extras.tube@%5E3.5.x/dist/aframe-extras.tube.min.js"></script>
+    <script src="constants.js"></script>
+    <script src="fire.js"></script>
+    <script src="clickOnBox.js"></script>
+    <script src="lookingAtBox.js"></script>
+    <script src="notLookingAtBox.js"></script>
+    <script src="https://unpkg.com/aframe-aabb-collider-component/dist/aframe-aabb-collider-component.min.js"></script>
+    <script src="collide.js"></script>
+
+  </head>
+  <body>
+
+  <!-- Main scene definition -->
+    <a-scene id="scene">
+
+     <a-entity id="ocean"
+               ocean="density: 20; width: 50; depth: 50"
+               color = "blue"
+               material="color: #016a86; opacity: 0.50"
+               rotation="-90 0 0">
+      </a-entity>
+      
+      <a-entity light="type:ambient; color: white;"
+                location="0 0 0">
+      </a-entity>
+      
+      <a-entity looking-at-box not-looking-at-box
+                id="box1"
+                geometry="primitive: box; height: 3; width: 3; depth: 3"
+                position="0 0.5 -10"
+                rotation="85 20 30"
+                material="src:https://cdn.glitch.com/a355fc59-d248-4b88-8a8a-be5dc06896d7%2Fd18f648c14d0df192c323c86d94276ce.jpg?1550097390687"
+                animation="property: position; easing: easeInOutQuad; dir: alternate; dur: 1000; to: 0 -0.1 -10; loop: true"
+                class="clickable detect-collide">
+      </a-entity>
+      
+      <a-entity looking-at-box not-looking-at-box
+                id="box2"
+                geometry="primitive: box; height: 3; width: 3; depth: 3"
+                position="6 0.5 -7"
+                rotation="-80 20 30"
+                material="src:https://cdn.glitch.com/a355fc59-d248-4b88-8a8a-be5dc06896d7%2Fd18f648c14d0df192c323c86d94276ce.jpg?1550097390687"
+                animation="property: position; easing: easeInOutQuad; dir: alternate; dur: 1000; to: 6 -0.1 -7; loop: true"
+                class="clickable detect-collide">
+      </a-entity>
+      
+      <a-entity looking-at-box not-looking-at-box
+                id="box3"
+                geometry="primitive: box; height: 3; width: 3; depth: 3"
+                position="3 -20 7"
+                rotation="-80 20 30"
+                material="src:https://cdn.glitch.com/a355fc59-d248-4b88-8a8a-be5dc06896d7%2Fd18f648c14d0df192c323c86d94276ce.jpg?1550097390687"
+                animation="property: position; easing: easeInOutQuad; dir: alternate; dur: 1000; to: 3 -19 7; loop: true"
+                class="clickable detect-collide">
+      </a-entity>
+      
+      <a-entity looking-at-box not-looking-at-box
+                id="box4"
+                geometry="primitive: box; height: 3; width: 3; depth: 3"
+                position="-14 0.5 -3"
+                rotation="-80 20 30"
+                material="src:https://cdn.glitch.com/a355fc59-d248-4b88-8a8a-be5dc06896d7%2Fd18f648c14d0df192c323c86d94276ce.jpg?1550097390687"
+                animation="property: position; easing: easeInOutQuad; dir: alternate; dur: 1000; to: -14 -0.2 -3; loop: true"
+                class="clickable detect-collide">
+      </a-entity>
+      
+      <a-entity looking-at-box not-looking-at-box
+                id="box5"
+                geometry="primitive: box; height: 3; width: 3; depth: 3"
+                position="-25 0.5 3"
+                rotation="80 20 30"
+                material="src:https://cdn.glitch.com/a355fc59-d248-4b88-8a8a-be5dc06896d7%2Fd18f648c14d0df192c323c86d94276ce.jpg?1550097390687"
+                animation="property: position; easing: easeInOutQuad; dir: alternate; dur: 1000; to: -25 -0.2 3; loop: true"
+                class="clickable detect-collide">
+      </a-entity>
+      
+      <a-entity looking-at-box not-looking-at-box
+                id="box6"
+                geometry="primitive: box; height: 3; width: 3; depth: 3"
+                position="11 -12 4"
+                rotation="-80 20 30"
+                material="src:https://cdn.glitch.com/a355fc59-d248-4b88-8a8a-be5dc06896d7%2Fd18f648c14d0df192c323c86d94276ce.jpg?1550097390687"
+                animation="property: position; easing: easeInOutQuad; dir: alternate; dur: 1000; to: 11 -13 4; loop: true"
+                class="clickable detect-collide">
+      </a-entity>
+      
+      <a-entity looking-at-box not-looking-at-box
+                id="box7"
+                geometry="primitive: box; height: 3; width: 3; depth: 3"
+                position="11 0.5 17"
+                rotation="-80 -20 30"
+                material="src:https://cdn.glitch.com/a355fc59-d248-4b88-8a8a-be5dc06896d7%2Fd18f648c14d0df192c323c86d94276ce.jpg?1550097390687"
+                animation="property: position; easing: easeInOutQuad; dir: alternate; dur: 1000; to: 11 -0.5 17; loop: true"
+                class="clickable detect-collide">
+      </a-entity>
+      
+      <a-entity looking-at-box not-looking-at-box
+                id="box8"
+                geometry="primitive: box; height: 3; width: 3; depth: 3"
+                position="-20 0.5 17"
+                rotation="-80 -20 30"
+                material="src:https://cdn.glitch.com/a355fc59-d248-4b88-8a8a-be5dc06896d7%2Fd18f648c14d0df192c323c86d94276ce.jpg?1550097390687"
+                animation="property: position; easing: easeInOutQuad; dir: alternate; dur: 1000; to: -20 -0.5 17; loop: true"
+                class="clickable detect-collide">
+      </a-entity>
+      
+      <a-entity id="cylinder"
+                geometry="primitive: cylinder; height: 1; radius: 0.5"
+                position="0 5 -10"
+                material="color: #AC2005; opacity: 1; src:https://cdn.glitch.com/a355fc59-d248-4b88-8a8a-be5dc06896d7%2Fmetal_texture.jpg?1550094531546"
+                class="clickable detect-collide">
+      </a-entity>
+      
+      
+      <a-entity camera
+                look-controls 
+                wasd-controls
+                id="camera"
+                position="0 2 0"
+                rotation="0 0 0">
+        
+        <a-entity raycaster 
+                  objects: .clickable>
+        </a-entity>
+        
+        <a-entity fire
+          id="torpedo"
+          geometry="primitive:sphere; radius: 0.5"
+          aabb-collider="objects: .detect-collide"
+          collide
+          material="color: gray"
+          visible="false"
+          position="0 0 -1">
+        </a-entity>
+        
+        <a-entity cursor click-on-box
+                  position="0 0 -1"
+                  geometry="primitive: ring; radiusInner: 0.005; radiusOuter: 0.01"
+                  material="color: black; shader: flat">
+        </a-entity>
+        
+      </a-entity>
+      
+      <a-sound src="src: url(https://cdn.glitch.com/a355fc59-d248-4b88-8a8a-be5dc06896d7%2Fbensound-thelounge.mp3?1550124668757)"
+               autoplay="true"
+               position="0 2 5">
+      </a-sound>
+
+      <!-- Create the surrounding environment -->
+      <a-sky color="#e0ffff"></a-sky>
+
+    </a-scene>
+    
+  </body>
+</html>

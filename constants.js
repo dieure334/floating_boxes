@@ -1,0 +1,2 @@
+const TORPEDO_SPEED = 40;
+const TORPEDO_MARGIN = 10;
